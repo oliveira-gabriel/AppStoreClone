@@ -20,8 +20,24 @@ class AppsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(AppsHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+
+        self.searchHighLighted()
     }
 
+}
+
+extension AppsVC {
+    func searchHighLighted(){
+        AppService.shared.searchAppsInHighlighted(){ (apps, err) in
+            if let err = err {
+                print(err)
+                return
+            }
+            if let apps = apps {
+                print(apps)
+            }
+        }
+    }
 }
 
 
