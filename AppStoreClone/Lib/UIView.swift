@@ -4,7 +4,7 @@ import UIKit
 
 
 extension UIView {
-    func configure(
+    func fill(
         top: NSLayoutYAxisAnchor? = nil,
         leading: NSLayoutXAxisAnchor? = nil,
         trailing: NSLayoutXAxisAnchor? = nil,
@@ -33,10 +33,10 @@ extension UIView {
         }
     }
 
-    func configureSuperview(
+    func fillSuperview(
         padding: UIEdgeInsets = .zero
     ) {
-        configure(
+        fill(
             top: superview?.topAnchor,
             leading: superview?.leadingAnchor,
             trailing: superview?.trailingAnchor,

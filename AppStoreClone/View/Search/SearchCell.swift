@@ -78,7 +78,7 @@ class SearchCell: UITableViewCell {
         globalStackView.axis = .vertical
 
         addSubview(globalStackView)
-        globalStackView.configureSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))
+        globalStackView.fillSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))
     }
 
     required init?(coder: NSCoder) {
