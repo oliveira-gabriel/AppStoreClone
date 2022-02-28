@@ -26,7 +26,6 @@
 		4EC5A5B627CD4AC300C81EA9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4EC5A5B527CD4AC300C81EA9 /* SDWebImage */; };
 		4EDD0AC027CD527E007F3919 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ABF27CD527E007F3919 /* AppsViewController.swift */; };
 		4EDD0AC227CD5721007F3919 /* AppsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AC127CD5720007F3919 /* AppsHeader.swift */; };
-		4EDD0AC727CD5CFE007F3919 /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AC627CD5CFE007F3919 /* AppsHeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +49,6 @@
 		4EC5A5B127CD4A5B00C81EA9 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		4EDD0ABF27CD527E007F3919 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 		4EDD0AC127CD5720007F3919 /* AppsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeader.swift; sourceTree = "<group>"; };
-		4EDD0AC627CD5CFE007F3919 /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +173,6 @@
 		4EDD0AC327CD5A4A007F3919 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				4EDD0AC627CD5CFE007F3919 /* AppsHeaderCell.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -269,7 +266,6 @@
 				4EC5A5AC27CD4A5400C81EA9 /* UIImageView.swift in Sources */,
 				4EC5A5B327CD4A5B00C81EA9 /* BaseTabBarViewController.swift in Sources */,
 				4EC5A57427CD496800C81EA9 /* AppDelegate.swift in Sources */,
-				4EDD0AC727CD5CFE007F3919 /* AppsHeaderCell.swift in Sources */,
 				4EDD0AC227CD5721007F3919 /* AppsHeader.swift in Sources */,
 				4EC5A57627CD496800C81EA9 /* SceneDelegate.swift in Sources */,
 				4EC5A5AB27CD4A5400C81EA9 /* UIButton.swift in Sources */,
