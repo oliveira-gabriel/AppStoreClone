@@ -6,10 +6,13 @@ class AppsHeader: UICollectionReusableView, UICollectionViewDelegate, UICollecti
     let cellId = "cellId"
     var collectionView: UICollectionView!
 
+    var appsHighlights: [AppHighlight] = []
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        let layout = UICollectionViewFlowLayout()
+//        let layout = UICollectionViewFlowLayout()
+        let layout = SnappingLayout()
         layout.scrollDirection = .horizontal
 
         collectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
@@ -18,6 +21,9 @@ class AppsHeader: UICollectionReusableView, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         collectionView.dataSource = self
 
+        collectionView.decelerationRate = .fast
+        collectionView.showsHorizontalScrollIndicator = false
+        
         collectionView.register(AppsHeaderCell.self, forCellWithReuseIdentifier: cellId)
 
         addSubview(collectionView)
@@ -32,12 +38,12 @@ class AppsHeader: UICollectionReusableView, UICollectionViewDelegate, UICollecti
 
 extension AppsHeader{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.appsHighlights.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsHeaderCell
-
+        cell.appHighlight = self.appsHighlights[indexPath.item]
         return cell
     }
 

@@ -1,8 +1,19 @@
 import UIKit
-
+import SDWebImage
 
 class AppsHeaderCell: UICollectionViewCell {
 
+
+    var appHighlight: AppHighlight? {
+        didSet{
+            if let appHighlight = appHighlight {
+                companyLabel.text = appHighlight.empresa
+                descriptionLabel.text = appHighlight.descricao
+
+                imageView.sd_setImage(with: URL(string: appHighlight.imagemUrl), completed: nil)
+            }
+        }
+    }
 
     let companyLabel: UILabel = .textLabel(text: "App empresa", fontSize: 12)
     let descriptionLabel: UILabel = .textLabel(text: "App description", fontSize: 20, numberOfLine: 2)
