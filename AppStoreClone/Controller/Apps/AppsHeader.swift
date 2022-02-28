@@ -18,7 +18,7 @@ class AppsHeader: UICollectionReusableView, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         collectionView.dataSource = self
 
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(AppsHeaderCell.self, forCellWithReuseIdentifier: cellId)
 
         addSubview(collectionView)
         collectionView.fillSuperview()
@@ -36,9 +36,7 @@ extension AppsHeader{
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-
-        cell.backgroundColor = .green
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsHeaderCell
 
         return cell
     }
