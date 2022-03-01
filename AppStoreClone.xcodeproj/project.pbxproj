@@ -32,6 +32,7 @@
 		4EDD0ACF27CD9238007F3919 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ACE27CD9238007F3919 /* AppsGroupCell.swift */; };
 		4EDD0AD127CD9454007F3919 /* AppsGroupHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD027CD9454007F3919 /* AppsGroupHorizontalViewController.swift */; };
 		4EDD0AD327CDBBED007F3919 /* AppsGroupHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD227CDBBED007F3919 /* AppsGroupHorizontalCell.swift */; };
+		4EDD0AD627CE542A007F3919 /* AppDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD527CE542A007F3919 /* AppDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		4EDD0ACE27CD9238007F3919 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		4EDD0AD027CD9454007F3919 /* AppsGroupHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalViewController.swift; sourceTree = "<group>"; };
 		4EDD0AD227CDBBED007F3919 /* AppsGroupHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalCell.swift; sourceTree = "<group>"; };
+		4EDD0AD527CE542A007F3919 /* AppDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		4EC5A5AE27CD4A5B00C81EA9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4EDD0AD427CE540F007F3919 /* AppDetails */,
 				4EC5A5B727CD513500C81EA9 /* Apps */,
 				4EC5A5AF27CD4A5B00C81EA9 /* Search */,
 				4EC5A5B127CD4A5B00C81EA9 /* BaseTabBarViewController.swift */,
@@ -193,6 +196,14 @@
 				4EDD0AD227CDBBED007F3919 /* AppsGroupHorizontalCell.swift */,
 			);
 			path = Apps;
+			sourceTree = "<group>";
+		};
+		4EDD0AD427CE540F007F3919 /* AppDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4EDD0AD527CE542A007F3919 /* AppDetailsViewController.swift */,
+			);
+			path = AppDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 				4EC5A57627CD496800C81EA9 /* SceneDelegate.swift in Sources */,
 				4EC5A5AB27CD4A5400C81EA9 /* UIButton.swift in Sources */,
 				4EDD0ACB27CD5EA3007F3919 /* AppService.swift in Sources */,
+				4EDD0AD627CE542A007F3919 /* AppDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

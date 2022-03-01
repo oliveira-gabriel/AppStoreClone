@@ -7,6 +7,9 @@ class AppsGroupHorizontalVC: UICollectionViewController, UICollectionViewDelegat
 
     var apps: [App] = []
 
+
+    var callback: ((App) -> ())?
+
     init(){
         let layout = SnappingLayout()
         layout.scrollDirection = .horizontal
@@ -62,7 +65,8 @@ extension AppsGroupHorizontalVC {
         return 0
     }
 
+    // pega o evento de click na celula
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(self.apps[indexPath.item])
+        self.callback?(self.apps[indexPath.item])
     }
 }
