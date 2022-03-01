@@ -54,7 +54,6 @@ extension AppDetailsVC {
         if indexPath.item == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: screenshotId, for: indexPath) as! AppDetailsScreenshotCell
 
-            cell.backgroundColor = .red
             return cell
         }
         return UICollectionViewCell()

@@ -15,8 +15,9 @@ class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, 
         layout.scrollDirection = .horizontal
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
 
+        collectionView.showsHorizontalScrollIndicator = false
         // serve para informar que é o AppDetailsScreenshot que cuida da collection
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -24,7 +25,7 @@ class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, 
         // seta espaçamento no inicio e fim do container
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(ScreenshotCell.self, forCellWithReuseIdentifier: cellId)
 
         addSubview(titleLabel)
 
@@ -61,9 +62,8 @@ extension AppDetailsScreenshotCell {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScreenshotCell
 
-        cell.backgroundColor = .brown
         return cell
     }
 
@@ -73,3 +73,20 @@ extension AppDetailsScreenshotCell {
     }
 }
 
+
+class ScreenshotCell: UICollectionViewCell {
+
+    let imageView: UIImageView = .screenshotImageView()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        imageView.image = UIImage(named: "screenshot")
+        addSubview(imageView)
+        imageView.fillSuperview()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+}
