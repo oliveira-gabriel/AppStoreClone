@@ -22,8 +22,8 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         super.viewDidLoad()
 
         navigationController?.navigationBar.isHidden = true
-        collectionView.backgroundColor = .white
-        collectionView.register(TodayVC.self, forCellWithReuseIdentifier: cellId)
+        collectionView.backgroundColor = .systemGroupedBackground
+        collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
 
     }
 
@@ -39,8 +39,7 @@ extension TodayVC {
 
     // informa qual o layout da celula
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
 
 
         return cell
