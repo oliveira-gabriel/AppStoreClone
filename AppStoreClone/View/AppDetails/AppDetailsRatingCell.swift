@@ -16,7 +16,7 @@ class AppDetailsRatingCell: UICollectionViewCell, UICollectionViewDelegate, UICo
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .white
 
         // seta espaçamento no inicio e fim do container
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -100,10 +100,18 @@ class CommentsCell: UICollectionViewCell {
 
         ratingImageView.image = UIImage(named: "avaliacao-4")
 
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, ratingImageView, commentLabel])
+        let headerStackView = UIStackView(arrangedSubviews: [titleLabel, ratingImageView])
+
+
+        let commentStackView = UIStackView(arrangedSubviews: [commentLabel])
+        commentStackView.alignment = .top
+
+        let stackView = UIStackView(arrangedSubviews: [headerStackView, commentStackView])
+        stackView.axis = .vertical
+        stackView.spacing = 12
 
         addSubview(stackView)
-        stackView.fillSuperview()
+        stackView.fillSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))
     }
 
     required init?(coder: NSCoder) {
