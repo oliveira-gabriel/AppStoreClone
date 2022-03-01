@@ -5,6 +5,8 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
 
     let headerId = "headerId"
     let descriptionId = "descriptionId"
+    let screenshotId = "screenshotId"
+
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -23,6 +25,7 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
         collectionView.backgroundColor = .white
         collectionView.register(AppDetailsHeaderCell.self, forCellWithReuseIdentifier: headerId)
         collectionView.register(AppDetailsDescriptionCell.self, forCellWithReuseIdentifier: descriptionId)
+        collectionView.register(AppDetailsScreenshotCell.self, forCellWithReuseIdentifier: screenshotId)
     }
 
 
@@ -32,7 +35,7 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
 extension AppDetailsVC {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -48,6 +51,12 @@ extension AppDetailsVC {
             return cell
         }
 
+        if indexPath.item == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: screenshotId, for: indexPath) as! AppDetailsScreenshotCell
+
+            cell.backgroundColor = .red
+            return cell
+        }
         return UICollectionViewCell()
     }
 
@@ -64,6 +73,10 @@ extension AppDetailsVC {
             let estimatedSizeCell = descriptionCell.systemLayoutSizeFitting(CGSize(width: width, height: 1000))
 
             height = estimatedSizeCell.height
+        }
+
+        if indexPath.item == 2 {
+            height = 550
         }
         return .init(width: width, height: height)
     }
