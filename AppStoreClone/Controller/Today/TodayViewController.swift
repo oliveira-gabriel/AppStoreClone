@@ -23,7 +23,7 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
         navigationController?.navigationBar.isHidden = true
         collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(TodayVC.self, forCellWithReuseIdentifier: cellId)
 
     }
 
