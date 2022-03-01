@@ -56,3 +56,16 @@ extension TodayVC {
         return 24
     }
 }
+
+extension TodayVC {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // pega a celula clicada
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            // pega a posicao da celula(frame)
+            if let frame = cell.superview?.convert(cell.frame, to: nil){
+                let modalView = TodayDetailsVC()
+                self.present(modalView, animated: false)
+            }
+        }
+    }
+}

@@ -45,18 +45,4 @@ class TodayCell: UICollectionViewCell {
 
 }
 
-extension TodayVC {
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // pega a celula clicada
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            // pega a posicao da celula(frame)
-            if let frame = cell.superview?.convert(cell.frame, to: nil){
-               let modalView = UIView()
-                modalView.frame = frame
-                modalView.backgroundColor = .red
 
-                view.addSubview(modalView)
-            }
-        }
-    }
-}
