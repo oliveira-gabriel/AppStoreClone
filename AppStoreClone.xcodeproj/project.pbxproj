@@ -38,6 +38,7 @@
 		4EDD0ADD27CE623B007F3919 /* AppsDetailsScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ADC27CE623B007F3919 /* AppsDetailsScreenshotCell.swift */; };
 		4EDD0ADF27CE75FB007F3919 /* AppDetailsRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ADE27CE75FB007F3919 /* AppDetailsRatingCell.swift */; };
 		4EDD0AE227CEB644007F3919 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AE127CEB643007F3919 /* TodayViewController.swift */; };
+		4EDD0AE527CED17A007F3919 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AE427CED17A007F3919 /* TodayCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		4EDD0ADC27CE623B007F3919 /* AppsDetailsScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailsScreenshotCell.swift; sourceTree = "<group>"; };
 		4EDD0ADE27CE75FB007F3919 /* AppDetailsRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsRatingCell.swift; sourceTree = "<group>"; };
 		4EDD0AE127CEB643007F3919 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4EDD0AE427CED17A007F3919 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		4EC5A59B27CD4A4C00C81EA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4EDD0AE327CED165007F3919 /* Today */,
 				4EDD0AD727CE5817007F3919 /* AppDetails */,
 				4EDD0AC327CD5A4A007F3919 /* Apps */,
 				4EC5A59C27CD4A4D00C81EA9 /* Search */,
@@ -237,6 +240,14 @@
 			path = Today;
 			sourceTree = "<group>";
 		};
+		4EDD0AE327CED165007F3919 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				4EDD0AE427CED17A007F3919 /* TodayCell.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +340,7 @@
 				4EDD0AC027CD527E007F3919 /* AppsViewController.swift in Sources */,
 				4EC5A5AC27CD4A5400C81EA9 /* UIImageView.swift in Sources */,
 				4EC5A5B327CD4A5B00C81EA9 /* BaseTabBarViewController.swift in Sources */,
+				4EDD0AE527CED17A007F3919 /* TodayCell.swift in Sources */,
 				4EDD0ADF27CE75FB007F3919 /* AppDetailsRatingCell.swift in Sources */,
 				4EC5A57427CD496800C81EA9 /* AppDelegate.swift in Sources */,
 				4EDD0ACF27CD9238007F3919 /* AppsGroupCell.swift in Sources */,

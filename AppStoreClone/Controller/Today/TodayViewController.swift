@@ -1,7 +1,7 @@
 import UIKit
 
 
-class TodayVC: UICollectionViewController {
+class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
 
 
@@ -21,6 +21,7 @@ class TodayVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.isHidden = true
         collectionView.backgroundColor = .white
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
 
@@ -40,8 +41,19 @@ extension TodayVC {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         cell.backgroundColor = .red
-        
+
 
         return cell
+    }
+
+    // seta o tamanho da celula
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return .init(width: view.bounds.width - 48, height: view.bounds.width + 50)
+    }
+
+    // seta o espaço entre as sessoes
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 24
     }
 }
