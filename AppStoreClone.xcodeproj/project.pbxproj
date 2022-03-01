@@ -35,6 +35,7 @@
 		4EDD0AD627CE542A007F3919 /* AppDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD527CE542A007F3919 /* AppDetailsViewController.swift */; };
 		4EDD0AD927CE582E007F3919 /* AppDetailsHearderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */; };
 		4EDD0ADB27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */; };
+		4EDD0ADD27CE623B007F3919 /* AppsDetailsScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ADC27CE623B007F3919 /* AppsDetailsScreenshotCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		4EDD0AD527CE542A007F3919 /* AppDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsViewController.swift; sourceTree = "<group>"; };
 		4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsHearderCell.swift; sourceTree = "<group>"; };
 		4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsDescriptionCell.swift; sourceTree = "<group>"; };
+		4EDD0ADC27CE623B007F3919 /* AppsDetailsScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailsScreenshotCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */,
+				4EDD0ADC27CE623B007F3919 /* AppsDetailsScreenshotCell.swift */,
 				4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */,
 			);
 			path = AppDetails;
@@ -305,6 +308,7 @@
 				4EDD0ADB27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift in Sources */,
 				4EC5A5A927CD4A5400C81EA9 /* UIView.swift in Sources */,
 				4EC5A5A827CD4A5400C81EA9 /* App.swift in Sources */,
+				4EDD0ADD27CE623B007F3919 /* AppsDetailsScreenshotCell.swift in Sources */,
 				4EC5A5B227CD4A5B00C81EA9 /* SearchViewController.swift in Sources */,
 				4EC5A5AA27CD4A5400C81EA9 /* UIColor.swift in Sources */,
 				4EDD0AD927CE582E007F3919 /* AppDetailsHearderCell.swift in Sources */,
