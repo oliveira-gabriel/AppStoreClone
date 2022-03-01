@@ -34,6 +34,7 @@
 		4EDD0AD327CDBBED007F3919 /* AppsGroupHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD227CDBBED007F3919 /* AppsGroupHorizontalCell.swift */; };
 		4EDD0AD627CE542A007F3919 /* AppDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD527CE542A007F3919 /* AppDetailsViewController.swift */; };
 		4EDD0AD927CE582E007F3919 /* AppDetailsHearderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */; };
+		4EDD0ADB27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		4EDD0AD227CDBBED007F3919 /* AppsGroupHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalCell.swift; sourceTree = "<group>"; };
 		4EDD0AD527CE542A007F3919 /* AppDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsViewController.swift; sourceTree = "<group>"; };
 		4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsHearderCell.swift; sourceTree = "<group>"; };
+		4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsDescriptionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */,
+				4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */,
 			);
 			path = AppDetails;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				4EC5A59E27CD4A4D00C81EA9 /* SearchService.swift in Sources */,
 				4EC5A5AD27CD4A5400C81EA9 /* UILabel.swift in Sources */,
 				4EDD0AD327CDBBED007F3919 /* AppsGroupHorizontalCell.swift in Sources */,
+				4EDD0ADB27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift in Sources */,
 				4EC5A5A927CD4A5400C81EA9 /* UIView.swift in Sources */,
 				4EC5A5A827CD4A5400C81EA9 /* App.swift in Sources */,
 				4EC5A5B227CD4A5B00C81EA9 /* SearchViewController.swift in Sources */,

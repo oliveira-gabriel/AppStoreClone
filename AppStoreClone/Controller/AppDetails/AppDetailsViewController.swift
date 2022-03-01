@@ -4,7 +4,7 @@ import UIKit
 class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let headerId = "headerId"
-
+    let descriptionId = "descriptionId"
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -22,6 +22,7 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
 
         collectionView.backgroundColor = .white
         collectionView.register(AppDetailsHeaderCell.self, forCellWithReuseIdentifier: headerId)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: descriptionId)
     }
 
 
@@ -31,15 +32,23 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
 extension AppDetailsVC {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerId, for: indexPath) as! AppDetailsHeaderCell
 
-        cell.backgroundColor = .grayCustom
 
-        return cell
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerId, for: indexPath) as! AppDetailsHeaderCell
+            return cell
+        }
+
+        if indexPath.item == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: descriptionId, for: indexPath)
+            return cell
+        }
+
+        return UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
