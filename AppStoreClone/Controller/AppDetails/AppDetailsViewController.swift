@@ -26,7 +26,9 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
             self.searchApp(appId: appId)
         }
     }
+    
     var app: App?
+    var loading: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +58,9 @@ extension AppDetailsVC {
             if let app = app {
                 DispatchQueue.main.async {
                     self.activityIndicatorView.stopAnimating()
+                    self.loading = false
                     self.app = app
                     self.collectionView.reloadData()
-                    
                 }
             }
         }
@@ -68,7 +70,7 @@ extension AppDetailsVC {
 extension AppDetailsVC {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.loading ? 1 : 4
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,16 +84,20 @@ extension AppDetailsVC {
 
         if indexPath.item == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: descriptionId, for: indexPath) as! AppDetailsDescriptionCell
+            cell.app = self.app
+
             return cell
         }
 
         if indexPath.item == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: screenshotId, for: indexPath) as! AppDetailsScreenshotCell
+            cell.app = self.app
 
             return cell
         }
         if indexPath.item == 3 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ratingId, for: indexPath) as! AppDetailsRatingCell
+            cell.app = self.app
 
             return cell
         }
@@ -106,7 +112,7 @@ extension AppDetailsVC {
 
         if indexPath.item == 1 {
             let descriptionCell = AppDetailsDescriptionCell(frame: CGRect(x: 0, y: 0, width: width, height: 1000))
-
+            descriptionCell.app = self.app
             descriptionCell.layoutIfNeeded()
             let estimatedSizeCell = descriptionCell.systemLayoutSizeFitting(CGSize(width: width, height: 1000))
 

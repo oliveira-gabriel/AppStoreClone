@@ -8,6 +8,14 @@ class AppDetailsRatingCell: UICollectionViewCell, UICollectionViewDelegate, UICo
     let titleLabel: UILabel = .textBoldLabel(text: "Avaliação e opniões", fontSize: 24)
     var collectionView: UICollectionView!
 
+    var app: App? {
+        didSet {
+            if app != nil {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -58,7 +66,7 @@ class AppDetailsRatingCell: UICollectionViewCell, UICollectionViewDelegate, UICo
 extension AppDetailsRatingCell {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.app?.comentarios?.count ?? 0
 
     }
 
@@ -66,6 +74,10 @@ extension AppDetailsRatingCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CommentsCell
 
+
+        if let comment = self.app?.comentarios?[indexPath.item]{
+            cell.comment = comment
+        }
         return cell
     }
 
@@ -77,7 +89,15 @@ extension AppDetailsRatingCell {
 
 class CommentsCell: UICollectionViewCell {
 
-
+    var comment: AppComment? {
+        didSet {
+            if let comment = comment {
+                titleLabel.text = comment.titulo
+                commentLabel.text = comment.descricao
+                ratingImageView.image = UIImage(named: "avaliacao-\(comment.avaliacao)")
+            }
+        }
+    }
     let titleLabel: UILabel = .textBoldLabel(text: "Muito bom", fontSize: 16)
     let commentLabel: UILabel = .textLabel(text: "Recomendo bastante este app, está muito bom", fontSize: 16, numberOfLine: 0)
 

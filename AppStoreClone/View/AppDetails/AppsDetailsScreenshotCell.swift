@@ -5,6 +5,14 @@ class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, 
 
     let cellId = "cellId"
 
+    var app: App? {
+        didSet {
+            if app != nil {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+
     let titleLabel: UILabel = .textBoldLabel(text: "Pré-visualizar", fontSize: 24)
     var collectionView: UICollectionView!
 
@@ -19,7 +27,7 @@ class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, 
 
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.decelerationRate = .fast
-        
+
         // serve para informar que é o AppDetailsScreenshot que cuida da collection
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -59,12 +67,15 @@ class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, 
 extension AppDetailsScreenshotCell {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.app?.screenshotUrls?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScreenshotCell
+        if let imageUrl = self.app?.screenshotUrls?[indexPath.item]{
+            cell.imageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
+        }
 
         return cell
     }

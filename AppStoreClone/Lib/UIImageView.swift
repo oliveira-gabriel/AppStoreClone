@@ -9,7 +9,7 @@ extension UIImageView {
 
 
         image.size(size: .init(width: width, height: height))
-        image.backgroundColor = .purple
+        image.backgroundColor = .grayCustom
         image.layer.borderWidth = 0.5
         image.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
         image.layer.cornerRadius = 12
@@ -21,7 +21,7 @@ extension UIImageView {
     static func screenshotImageView() -> UIImageView {
         let image = UIImageView()
 
-        image.backgroundColor = .purple
+        image.backgroundColor = .grayCustom
         image.layer.cornerRadius = 12
         image.layer.borderWidth = 0.5
         image.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor

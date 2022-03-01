@@ -38,9 +38,9 @@ class AppService {
 
             do {
                 guard let data = data else {return}
-
+                print(data)
                 let apps = try JSONDecoder().decode(AppGroup.self, from: data)
-
+                print("FEZ A REQUEST: \(apps)")
                 completion(apps,nil )
             } catch let err {
                 completion(nil, err)

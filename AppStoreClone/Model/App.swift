@@ -8,6 +8,8 @@ struct App: Decodable {
     let avalicao: String?
     let iconeUrl: String
     let screenshotUrls: [String]?
+    let descricao: String?
+    let comentarios: [AppComment]?
 }
 
 struct AppHighlight: Decodable {
@@ -23,4 +25,11 @@ struct AppGroup: Decodable {
     let id: String
     let titulo: String
     let apps: [App]
+}
+
+struct AppComment: Decodable {
+    let id: Int
+    let titulo: String
+    let avaliacao: Int
+    let descricao: String
 }
