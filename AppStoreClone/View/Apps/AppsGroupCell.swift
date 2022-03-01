@@ -3,7 +3,7 @@ import UIKit
 
 class AppsGroupCell: UICollectionViewCell{
 
-
+    // seta as var quando um grupo é enviado pelo AppsViewController
     var group: AppGroup?{
         didSet {
             if let group = group {

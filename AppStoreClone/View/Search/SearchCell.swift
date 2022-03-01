@@ -28,11 +28,11 @@ class SearchCell: UITableViewCell {
     let iconImageView: UIImageView = .iconImageView()
     let titleLabel: UILabel = .textLabel(text: "App nome", fontSize: 18, numberOfLine: 2)
     let companyLabel: UILabel = .textLabel(text: "Empresa nome", fontSize: 14)
-    let getButton: UIButton = .getButton()
+    let getButton: UIButton = .makeButton()
 
-    let screenshot1: UIImageView = .screenshowImageView()
-    let screenshot2: UIImageView = .screenshowImageView()
-    let screenshot3: UIImageView = .screenshowImageView()
+    let screenshot1: UIImageView = .screenshotImageView()
+    let screenshot2: UIImageView = .screenshotImageView()
+    let screenshot3: UIImageView = .screenshotImageView()
 
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){

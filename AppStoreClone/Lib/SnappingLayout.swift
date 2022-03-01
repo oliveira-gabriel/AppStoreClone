@@ -1,11 +1,3 @@
-//
-//  SnappingLayout.swift
-//  App Store
-//
-//  Created by Tiago Oliveira on 26/09/19.
-//  Copyright © 2019 Tiago Oliveira. All rights reserved.
-//
-
 import UIKit
 
 class SnappingLayout: UICollectionViewFlowLayout {

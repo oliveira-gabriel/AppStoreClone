@@ -1,6 +1,6 @@
 import Foundation
 
-
+// MODELS 
 struct App: Decodable {
     let id: Int
     let nome: String

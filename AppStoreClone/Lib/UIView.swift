@@ -4,6 +4,7 @@ import UIKit
 
 
 extension UIView {
+    // preenche a view com os tamanhos desejados
     func fill(
         top: NSLayoutYAxisAnchor? = nil,
         leading: NSLayoutXAxisAnchor? = nil,
@@ -33,6 +34,7 @@ extension UIView {
         }
     }
 
+    // preenche a view do tamanho da super view
     func fillSuperview(
         padding: UIEdgeInsets = .zero
     ) {

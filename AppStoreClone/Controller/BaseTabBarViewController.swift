@@ -13,7 +13,7 @@ class BaseTabBarViewController: UITabBarController {
 
         let searchVC = self.makeTabItem(viewController: SearchVC(), title: "Busca", image: "icone-busca")
 
-
+        // seta os view controllers
         viewControllers = [
             todayVC,
             appsVC,
@@ -23,6 +23,8 @@ class BaseTabBarViewController: UITabBarController {
         selectedIndex = 1
     }
 
+
+    // cria os tabItens e adiciona seus controllers
     func makeTabItem(viewController: UIViewController, title: String, image: String) -> UIViewController {
         let navController = UINavigationController(rootViewController: viewController)
         navController.navigationBar.prefersLargeTitles = true

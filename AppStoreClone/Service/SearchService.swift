@@ -1,9 +1,10 @@
 import UIKit
 
-
+// Search service
 class SearchService {
     static let shared = SearchService()
-    
+
+    // get no banco e retorna uma lista de apps caso encontre
     func searchApps(text: String, completion: @escaping ([App]?, Error?) ->()) {
         guard let url = URL(string: "http://localhost/app-store/v1/apps?search=\(text)") else {return}
 

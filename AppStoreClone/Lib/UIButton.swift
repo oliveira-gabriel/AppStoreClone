@@ -3,7 +3,7 @@ import UIKit
 
 extension UIButton {
 
-    static func getButton () -> UIButton {
+    static func makeButton () -> UIButton {
 
         let button = UIButton(type: .system)
 

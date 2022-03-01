@@ -2,6 +2,7 @@ import UIKit
 
 class AppsGroupHorizontalCell: UICollectionViewCell {
 
+    // seta o app a ser exibido quando recebido pelo AppGroupHorizontalCellViewController
     var app: App?{
         didSet{
             if let app = app {
@@ -14,7 +15,7 @@ class AppsGroupHorizontalCell: UICollectionViewCell {
     let iconImageView: UIImageView = .iconImageView()
     let titleLabel: UILabel = .textLabel(text: "App nome", fontSize: 18, numberOfLine: 2)
     let companyLabel: UILabel = .textLabel(text: "App empresa", fontSize: 14)
-    let getButton: UIButton = .getButton()
+    let getButton: UIButton = .makeButton()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

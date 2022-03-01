@@ -3,7 +3,7 @@ import SDWebImage
 
 class AppsHeaderCell: UICollectionViewCell {
 
-
+    // seta o appHighlight quando enviado pelo AppHeaderViewController 
     var appHighlight: AppHighlight? {
         didSet{
             if let appHighlight = appHighlight {
@@ -17,7 +17,7 @@ class AppsHeaderCell: UICollectionViewCell {
 
     let companyLabel: UILabel = .textLabel(text: "App empresa", fontSize: 12)
     let descriptionLabel: UILabel = .textLabel(text: "App description", fontSize: 20, numberOfLine: 2)
-    let imageView: UIImageView = .screenshowImageView()
+    let imageView: UIImageView = .screenshotImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

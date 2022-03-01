@@ -18,7 +18,7 @@ extension UIImageView {
         return image
     }
 
-    static func screenshowImageView() -> UIImageView {
+    static func screenshotImageView() -> UIImageView {
         let image = UIImageView()
 
         image.backgroundColor = .purple

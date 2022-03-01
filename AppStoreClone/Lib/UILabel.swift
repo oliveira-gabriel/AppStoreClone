@@ -3,6 +3,8 @@ import UIKit
 
 
 extension UILabel {
+
+    // metodos para criar label com padroes definidos
     static func textLabel(text: String, fontSize: CGFloat, numberOfLine: Int = 1) -> UILabel {
         let label = UILabel()
 
