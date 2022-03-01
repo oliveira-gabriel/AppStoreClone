@@ -21,6 +21,8 @@ class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, 
         collectionView.delegate = self
         collectionView.dataSource = self
 
+        // seta espaçamento no inicio e fim do container
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
 
@@ -67,7 +69,7 @@ extension AppDetailsScreenshotCell {
 
     // seta tamanho das celulas
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 220, height: collectionView.bounds.width)
+        return .init(width: 220, height: collectionView.bounds.height)
     }
 }
 
