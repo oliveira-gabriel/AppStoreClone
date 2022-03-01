@@ -7,7 +7,7 @@ class BaseTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let todayVC = self.makeTabItem(viewController: UIViewController(), title: "Hoje", image: "icone-hoje")
+        let todayVC = self.makeTabItem(viewController: TodayVC(), title: "Hoje", image: "icone-hoje")
 
         let appsVC = self.makeTabItem(viewController: AppsVC(), title: "Apps", image: "icone-apps")
 
@@ -20,7 +20,7 @@ class BaseTabBarViewController: UITabBarController {
             searchVC
         ]
 
-        selectedIndex = 1
+        selectedIndex = 0
     }
 
 
