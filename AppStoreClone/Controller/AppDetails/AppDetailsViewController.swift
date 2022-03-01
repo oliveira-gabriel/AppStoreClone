@@ -9,6 +9,9 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
     let ratingId = "ratingId"
 
 
+
+    let activityIndicatorView = UIActivityIndicatorView(style: .large)
+
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -18,9 +21,19 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
         fatalError()
     }
 
+    var appId: Int! {
+        didSet {
+            self.searchApp(appId: appId)
+        }
+    }
+    var app: App?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        activityIndicatorView.color = .grayCustom
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.hidesWhenStopped = true
 
         navigationItem.largeTitleDisplayMode = .never
 
@@ -29,16 +42,33 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
         collectionView.register(AppDetailsDescriptionCell.self, forCellWithReuseIdentifier: descriptionId)
         collectionView.register(AppDetailsScreenshotCell.self, forCellWithReuseIdentifier: screenshotId)
         collectionView.register(AppDetailsRatingCell.self, forCellWithReuseIdentifier: ratingId)
+
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centerSuperview()
+
     }
 
 
 }
-
+extension AppDetailsVC {
+    func searchApp(appId: Int){
+        AppService.shared.searchAppId(appId: appId) { (app, err) in
+            if let app = app {
+                DispatchQueue.main.async {
+                    self.activityIndicatorView.stopAnimating()
+                    self.app = app
+                    self.collectionView.reloadData()
+                    
+                }
+            }
+        }
+    }
+}
 
 extension AppDetailsVC {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,6 +76,7 @@ extension AppDetailsVC {
 
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerId, for: indexPath) as! AppDetailsHeaderCell
+            cell.app = self.app
             return cell
         }
 
@@ -89,7 +120,7 @@ extension AppDetailsVC {
         if indexPath.item == 3 {
             height = 280
         }
-        
+
         return .init(width: width, height: height)
     }
 }

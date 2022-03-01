@@ -3,6 +3,17 @@ import UIKit
 
 class AppDetailsHeaderCell: UICollectionViewCell {
 
+    var app: App? {
+        didSet {
+            if let app = app {
+                nameLabel.text = app.nome
+                iconImageView.sd_setImage(with: URL(string: app.iconeUrl), completed: nil)
+                companyLabel.text = app.empresa
+
+            }
+
+        }
+    }
     let iconImageView: UIImageView = .iconImageView(width: 128, height: 128)
 
     let nameLabel: UILabel = .textLabel(text: "App name", fontSize: 20, numberOfLine: 2)
