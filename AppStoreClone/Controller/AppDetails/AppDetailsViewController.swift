@@ -3,7 +3,7 @@ import UIKit
 // UICollectionViewDelegateFlowLayout para permitir trabalhar com tamanhos
 class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    let cellId = "cellId"
+    let headerId = "headerId"
 
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -21,7 +21,7 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
         navigationItem.largeTitleDisplayMode = .never
 
         collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(AppDetailsHeaderCell.self, forCellWithReuseIdentifier: headerId)
     }
 
 
@@ -31,11 +31,11 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
 extension AppDetailsVC {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerId, for: indexPath) as! AppDetailsHeaderCell
 
         cell.backgroundColor = .grayCustom
 
@@ -43,6 +43,10 @@ extension AppDetailsVC {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.bounds.width, height: 250)
+
+
+        let width: CGFloat = view.bounds.width
+        let height: CGFloat = 170
+        return .init(width: width, height: height)
     }
 }
