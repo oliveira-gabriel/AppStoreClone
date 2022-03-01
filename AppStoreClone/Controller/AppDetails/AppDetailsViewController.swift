@@ -6,6 +6,8 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
     let headerId = "headerId"
     let descriptionId = "descriptionId"
     let screenshotId = "screenshotId"
+    let ratingId = "ratingId"
+
 
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -26,6 +28,7 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
         collectionView.register(AppDetailsHeaderCell.self, forCellWithReuseIdentifier: headerId)
         collectionView.register(AppDetailsDescriptionCell.self, forCellWithReuseIdentifier: descriptionId)
         collectionView.register(AppDetailsScreenshotCell.self, forCellWithReuseIdentifier: screenshotId)
+        collectionView.register(AppDetailsRatingCell.self, forCellWithReuseIdentifier: ratingId)
     }
 
 
@@ -35,7 +38,7 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
 extension AppDetailsVC {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -53,6 +56,11 @@ extension AppDetailsVC {
 
         if indexPath.item == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: screenshotId, for: indexPath) as! AppDetailsScreenshotCell
+
+            return cell
+        }
+        if indexPath.item == 3 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ratingId, for: indexPath) as! AppDetailsRatingCell
 
             return cell
         }
@@ -77,6 +85,11 @@ extension AppDetailsVC {
         if indexPath.item == 2 {
             height = 550
         }
+
+        if indexPath.item == 3 {
+            height = 280
+        }
+        
         return .init(width: width, height: height)
     }
 }

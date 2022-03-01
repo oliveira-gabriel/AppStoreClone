@@ -36,6 +36,7 @@
 		4EDD0AD927CE582E007F3919 /* AppDetailsHearderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */; };
 		4EDD0ADB27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */; };
 		4EDD0ADD27CE623B007F3919 /* AppsDetailsScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ADC27CE623B007F3919 /* AppsDetailsScreenshotCell.swift */; };
+		4EDD0ADF27CE75FB007F3919 /* AppDetailsRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ADE27CE75FB007F3919 /* AppDetailsRatingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsHearderCell.swift; sourceTree = "<group>"; };
 		4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsDescriptionCell.swift; sourceTree = "<group>"; };
 		4EDD0ADC27CE623B007F3919 /* AppsDetailsScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailsScreenshotCell.swift; sourceTree = "<group>"; };
+		4EDD0ADE27CE75FB007F3919 /* AppDetailsRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsRatingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				4EDD0AD827CE582E007F3919 /* AppDetailsHearderCell.swift */,
 				4EDD0ADC27CE623B007F3919 /* AppsDetailsScreenshotCell.swift */,
 				4EDD0ADA27CE5CC5007F3919 /* AppDetailsDescriptionCell.swift */,
+				4EDD0ADE27CE75FB007F3919 /* AppDetailsRatingCell.swift */,
 			);
 			path = AppDetails;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				4EDD0AC027CD527E007F3919 /* AppsViewController.swift in Sources */,
 				4EC5A5AC27CD4A5400C81EA9 /* UIImageView.swift in Sources */,
 				4EC5A5B327CD4A5B00C81EA9 /* BaseTabBarViewController.swift in Sources */,
+				4EDD0ADF27CE75FB007F3919 /* AppDetailsRatingCell.swift in Sources */,
 				4EC5A57427CD496800C81EA9 /* AppDelegate.swift in Sources */,
 				4EDD0ACF27CD9238007F3919 /* AppsGroupCell.swift in Sources */,
 				4EDD0AC927CD5E10007F3919 /* AppsHeaderCell.swift in Sources */,

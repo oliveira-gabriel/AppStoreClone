@@ -1,11 +1,11 @@
 import UIKit
 
 
-class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class AppDetailsRatingCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    let cellId = "cellId"
+    var cellId = "cellId"
 
-    let titleLabel: UILabel = .textBoldLabel(text: "Pré-visualizar", fontSize: 24)
+    let titleLabel: UILabel = .textBoldLabel(text: "Avaliação e opniões", fontSize: 24)
     var collectionView: UICollectionView!
 
     override init(frame: CGRect) {
@@ -15,19 +15,20 @@ class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, 
         layout.scrollDirection = .horizontal
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .white
 
+        collectionView.backgroundColor = .red
+
+        // seta espaçamento no inicio e fim do container
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+
+        // remove scroll indicator
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.decelerationRate = .fast
-        
-        // serve para informar que é o AppDetailsScreenshot que cuida da collection
+
         collectionView.delegate = self
         collectionView.dataSource = self
 
-        // seta espaçamento no inicio e fim do container
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 100)
-
-        collectionView.register(ScreenshotCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(CommentsCell.self, forCellWithReuseIdentifier: cellId)
 
         addSubview(titleLabel)
 
@@ -54,38 +55,55 @@ class AppDetailsScreenshotCell: UICollectionViewCell, UICollectionViewDelegate, 
     }
 
 }
-
-
-extension AppDetailsScreenshotCell {
+extension AppDetailsRatingCell {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
+
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScreenshotCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CommentsCell
 
         return cell
     }
 
-    // seta tamanho das celulas
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 220, height: collectionView.bounds.height)
+        return .init(width: collectionView.bounds.width - 40, height: collectionView.bounds.height)
     }
 }
 
 
-class ScreenshotCell: UICollectionViewCell {
+class CommentsCell: UICollectionViewCell {
 
-    let imageView: UIImageView = .screenshotImageView()
+
+    let titleLabel: UILabel = .textBoldLabel(text: "Muito bom", fontSize: 16)
+    let commentLabel: UILabel = .textLabel(text: "Recomendo bastante este app, está muito bom", fontSize: 16, numberOfLine: 0)
+
+
+    let ratingImageView: UIImageView = UIImageView()
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        imageView.image = UIImage(named: "screenshot")
-        addSubview(imageView)
-        imageView.fillSuperview()
+
+        ratingImageView.size(size: .init(width: 120, height: 24))
+        ratingImageView.contentMode = .scaleAspectFit
+
+        backgroundColor = .background
+        layer.cornerRadius = 12
+        layer.masksToBounds = true
+        clipsToBounds = true
+
+
+        ratingImageView.image = UIImage(named: "avaliacao-4")
+
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, ratingImageView, commentLabel])
+
+        addSubview(stackView)
+        stackView.fillSuperview()
     }
 
     required init?(coder: NSCoder) {
