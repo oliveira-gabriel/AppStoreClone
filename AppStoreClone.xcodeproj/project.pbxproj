@@ -30,6 +30,8 @@
 		4EDD0ACB27CD5EA3007F3919 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ACA27CD5EA3007F3919 /* AppService.swift */; };
 		4EDD0ACD27CD6461007F3919 /* SnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ACC27CD6460007F3919 /* SnappingLayout.swift */; };
 		4EDD0ACF27CD9238007F3919 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0ACE27CD9238007F3919 /* AppsGroupCell.swift */; };
+		4EDD0AD127CD9454007F3919 /* AppsGroupHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD027CD9454007F3919 /* AppsGroupHorizontalViewController.swift */; };
+		4EDD0AD327CDBBED007F3919 /* AppsGroupHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0AD227CDBBED007F3919 /* AppsGroupHorizontalCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		4EDD0ACA27CD5EA3007F3919 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
 		4EDD0ACC27CD6460007F3919 /* SnappingLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnappingLayout.swift; sourceTree = "<group>"; };
 		4EDD0ACE27CD9238007F3919 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
+		4EDD0AD027CD9454007F3919 /* AppsGroupHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalViewController.swift; sourceTree = "<group>"; };
+		4EDD0AD227CDBBED007F3919 /* AppsGroupHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +180,7 @@
 			children = (
 				4EDD0ABF27CD527E007F3919 /* AppsViewController.swift */,
 				4EDD0AC127CD5720007F3919 /* AppsHeader.swift */,
-				4EDD0ACE27CD9238007F3919 /* AppsGroupCell.swift */,
+				4EDD0AD027CD9454007F3919 /* AppsGroupHorizontalViewController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -184,7 +188,9 @@
 		4EDD0AC327CD5A4A007F3919 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				4EDD0ACE27CD9238007F3919 /* AppsGroupCell.swift */,
 				4EDD0AC827CD5E10007F3919 /* AppsHeaderCell.swift */,
+				4EDD0AD227CDBBED007F3919 /* AppsGroupHorizontalCell.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 				4EC5A59F27CD4A4D00C81EA9 /* SearchCell.swift in Sources */,
 				4EC5A59E27CD4A4D00C81EA9 /* SearchService.swift in Sources */,
 				4EC5A5AD27CD4A5400C81EA9 /* UILabel.swift in Sources */,
+				4EDD0AD327CDBBED007F3919 /* AppsGroupHorizontalCell.swift in Sources */,
 				4EC5A5A927CD4A5400C81EA9 /* UIView.swift in Sources */,
 				4EC5A5A827CD4A5400C81EA9 /* App.swift in Sources */,
 				4EC5A5B227CD4A5B00C81EA9 /* SearchViewController.swift in Sources */,
@@ -282,6 +289,7 @@
 				4EDD0AC927CD5E10007F3919 /* AppsHeaderCell.swift in Sources */,
 				4EDD0ACD27CD6461007F3919 /* SnappingLayout.swift in Sources */,
 				4EDD0AC227CD5721007F3919 /* AppsHeader.swift in Sources */,
+				4EDD0AD127CD9454007F3919 /* AppsGroupHorizontalViewController.swift in Sources */,
 				4EC5A57627CD496800C81EA9 /* SceneDelegate.swift in Sources */,
 				4EC5A5AB27CD4A5400C81EA9 /* UIButton.swift in Sources */,
 				4EDD0ACB27CD5EA3007F3919 /* AppService.swift in Sources */,
