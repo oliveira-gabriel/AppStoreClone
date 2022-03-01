@@ -22,7 +22,7 @@ class AppDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayo
 
         collectionView.backgroundColor = .white
         collectionView.register(AppDetailsHeaderCell.self, forCellWithReuseIdentifier: headerId)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: descriptionId)
+        collectionView.register(AppDetailsDescriptionCell.self, forCellWithReuseIdentifier: descriptionId)
     }
 
 
@@ -44,7 +44,7 @@ extension AppDetailsVC {
         }
 
         if indexPath.item == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: descriptionId, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: descriptionId, for: indexPath) as! AppDetailsDescriptionCell
             return cell
         }
 
@@ -55,7 +55,16 @@ extension AppDetailsVC {
 
 
         let width: CGFloat = view.bounds.width
-        let height: CGFloat = 170
+        var height: CGFloat = 170
+
+        if indexPath.item == 1 {
+            let descriptionCell = AppDetailsDescriptionCell(frame: CGRect(x: 0, y: 0, width: width, height: 1000))
+
+            descriptionCell.layoutIfNeeded()
+            let estimatedSizeCell = descriptionCell.systemLayoutSizeFitting(CGSize(width: width, height: 1000))
+
+            height = estimatedSizeCell.height
+        }
         return .init(width: width, height: height)
     }
 }
