@@ -45,6 +45,19 @@ class TodayDetailsVC: UIViewController {
         // atualiza o layout da view
         view.layoutIfNeeded()
 
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .overrideInheritedCurve, animations: {
+
+            self.topConstraint?.constant = 0
+            self.leadingConstraint?.constant = 0
+            self.widthConstraint?.constant = self.view.frame.width
+            self.heightConstraint?.constant = self.view.frame.height
+
+            self.centerView?.layer.cornerRadius = 0
+
+            self.view.layoutIfNeeded()
+
+        }, completion: nil)
+
 
     }
 }
