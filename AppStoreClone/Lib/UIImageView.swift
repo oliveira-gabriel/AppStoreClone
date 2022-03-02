@@ -40,7 +40,7 @@ extension UIImageView {
             image.image = UIImage(named: named)
         }
 
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         return image
 
     }

@@ -48,7 +48,7 @@ extension TodayVC {
     // seta o tamanho da celula
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return .init(width: view.bounds.width - 48, height: view.bounds.width + 50)
+        return .init(width: view.bounds.width - 48, height: view.bounds.width + 48)
     }
 
     // seta o espaço entre as sessoes
@@ -67,10 +67,11 @@ extension TodayVC {
                 tabBarController?.tabBar.isHidden = true
                 
                 let modalView = TodayDetailsVC()
-                modalView.modalPresentationStyle = .overCurrentContext
+
+                modalView.modalPresentationStyle = .overCurrentContext 
                 self.present(modalView, animated: false){
                     modalView.frame = frame
-                    modalView.animated()
+                    modalView.addUnique()
                 }
             }
         }

@@ -3,33 +3,61 @@ import UIKit
 
 class TodayDetailsVC: UIViewController {
 
-
+    let closeButton: UIButton = .closeButton()
     var centerView: UIView?
     var frame: CGRect?
+
     var topConstraint: NSLayoutConstraint?
     var leadingConstraint: NSLayoutConstraint?
     var widthConstraint: NSLayoutConstraint?
     var heightConstraint: NSLayoutConstraint?
 
+    let todayDetailsUniqueVC = TodayDetailsUniqueVC()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .clear
-        
-        centerView = UIView()
 
+    }
+
+    func addCloseButton() {
+        view.addSubview(closeButton)
+        closeButton.alpha = 0
+        closeButton.addTarget(self, action: #selector(handleClose), for: .touchUpInside)
+
+        closeButton.fill(
+            top: self.view.safeAreaLayoutGuide.topAnchor,
+            leading: nil,
+            trailing: view.trailingAnchor,
+            bottom: nil,
+            padding: .init(top: 18, left: 0, bottom: 0, right: 24),
+            size: .init(width: 32, height: 32)
+        )
+
+        UIView.animate(withDuration: 0.3, delay: 0.2, options: .showHideTransitionViews, animations:  {
+            self.closeButton.alpha = 1
+        }, completion: nil)
+
+    }
+    
+    func addUnique() {
+
+        self.centerView = todayDetailsUniqueVC.view
+        self.animated()
     }
 
     func animated() {
         guard let centerView = self.centerView else { return }
         guard let frame = self.frame else { return }
+
         centerView.translatesAutoresizingMaskIntoConstraints = false
-        centerView.backgroundColor = .blue
         centerView.layer.cornerRadius = 16
         centerView.clipsToBounds = true
 
 
         view.addSubview(centerView)
+        self.addCloseButton()
 
         // seta a constraint do top a mesma do frame e não a da view
         self.topConstraint = centerView.topAnchor.constraint(equalTo: view.topAnchor, constant: frame.origin.y)
@@ -58,6 +86,11 @@ class TodayDetailsVC: UIViewController {
 
         }, completion: nil)
 
+
+    }
+
+
+    @objc func handleClose() {
 
     }
 }
