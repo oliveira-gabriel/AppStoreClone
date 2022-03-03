@@ -6,6 +6,7 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
 
     let cellId = "cellId"
+    var todayApps: [TodayApp] = []
 
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -25,16 +26,30 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
 
+        self.searchTodayHighlights()
     }
 
 }
 
+extension TodayVC {
+    func searchTodayHighlights () {
+        TodayService.shared.searchTodayHighlight { apps, err in
+            DispatchQueue.main.async {
+                if let apps = apps {
+                    self.todayApps = apps
+                    self.collectionView.reloadData()
+                }
+
+            }
+        }
+    }
+}
 
 extension TodayVC {
 
     // informa o numero de celulas que teremos
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.todayApps.count
     }
 
     // informa qual o layout da celula
