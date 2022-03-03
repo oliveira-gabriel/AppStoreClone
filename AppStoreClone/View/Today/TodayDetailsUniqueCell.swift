@@ -7,8 +7,20 @@ class TodayDetailsUniqueCell: UITableViewCell {
         let label = UILabel()
 
         let textAtrr = NSMutableAttributedString(string: "Lorem ipsum", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
-        textAtrr.append(NSMutableAttributedString(string: "Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray]))
+        textAtrr.append(NSAttributedString(string: " é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray]))
 
+        textAtrr.append(NSAttributedString(string: "\n\n De onde ele vem?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black]))
+
+        textAtrr.append(NSAttributedString(string: " é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray]))
+
+        textAtrr.append(NSAttributedString(string: "\n\n De onde ele vem?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black]))
+
+        textAtrr.append(NSAttributedString(string: " é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray]))
+
+        textAtrr.append(NSAttributedString(string: "\n\n De onde ele vem?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black]))
+
+        textAtrr.append(NSAttributedString(string: " é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemGray]))
+        
 
         label.attributedText = textAtrr
         label.font = UIFont.systemFont(ofSize: 14)

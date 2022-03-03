@@ -10,6 +10,8 @@ class TodayDetailsUniqueVC: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundColor = .white
         tableView.register(TodayDetailsUniqueCell.self, forCellReuseIdentifier: cellId)
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         self.addHeader()
     }
 
@@ -32,7 +34,7 @@ extension TodayDetailsUniqueVC {
         return 1
       }
       override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TodayDetailsUniqueCell
         return cell
       }
 }
