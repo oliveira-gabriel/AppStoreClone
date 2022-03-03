@@ -53,7 +53,14 @@ class TodayCell: UICollectionViewCell {
         stackView.spacing = 8
 
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+//        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+        stackView.fill(
+            top: self.safeAreaLayoutGuide.topAnchor,
+            leading: leadingAnchor,
+            trailing: trailingAnchor,
+            bottom: bottomAnchor,
+            padding: .init(top: 24, left: 24, bottom: 24, right: 24)
+        )
     }
 
     required init?(coder: NSCoder) {

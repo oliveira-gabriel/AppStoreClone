@@ -12,6 +12,8 @@ class TodayDetailsUniqueVC: UITableViewController {
         tableView.backgroundColor = .white
         tableView.register(TodayDetailsUniqueCell.self, forCellReuseIdentifier: cellId)
         tableView.separatorStyle = .none
+        // ignora o safearea
+        tableView.contentInsetAdjustmentBehavior = .never
         tableView.allowsSelection = false
         self.addHeader()
     }
@@ -23,7 +25,7 @@ class TodayDetailsUniqueVC: UITableViewController {
         let todayCell = TodayCell()
 
         todayCell.todayApp = self.todayApp
-        
+
         todayCell.layer.cornerRadius = 0
 
         headerView.addSubview(todayCell)
