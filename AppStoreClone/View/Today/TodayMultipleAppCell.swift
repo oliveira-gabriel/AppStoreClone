@@ -3,6 +3,20 @@ import UIKit
 
 class TodayMultpleAppCell: UITableViewCell {
 
+
+    var app: App? {
+        didSet {
+            if let app = app {
+                iconImageView.sd_setImage(with: URL(string: app.iconeUrl), completed: nil)
+                titleLabel.text = app.nome
+                companyLabel.text = app.empresa
+
+
+
+            }
+        }
+    }
+    
     let iconImageView: UIImageView = .iconImageView(width: 48, height: 48)
 
     let titleLabel: UILabel = .textLabel(text: "App nome", fontSize: 16)

@@ -2,6 +2,17 @@ import UIKit
 
 class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
 
+    var todayApp: TodayApp? {
+        didSet {
+            if let todayApp = todayApp {
+                catogoryLabel.text = todayApp.categoria
+                titleLabel.text = todayApp.titulo
+
+                tableView.reloadData()
+            }
+        }
+    }
+
     let cellId = "cellId"
 
     let catogoryLabel: UILabel = .textLabel(text: "VIAGEM", fontSize: 18)
@@ -55,7 +66,7 @@ class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewD
 // make layout
 extension TodayMultipleCell {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.todayApp?.apps?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
