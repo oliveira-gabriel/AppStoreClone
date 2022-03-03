@@ -116,7 +116,7 @@ class TodayDetailsVC: UIViewController {
         // atualiza o layout da view
         view.layoutIfNeeded()
 
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .overrideInheritedCurve, animations: {
+        UIView.animate(withDuration: 0.6, delay: 0.0,usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .overrideInheritedCurve, animations: {
 
             self.topConstraint?.constant = 0
             self.leadingConstraint?.constant = 0
@@ -133,7 +133,7 @@ class TodayDetailsVC: UIViewController {
     }
 
     func closeAnimation() {
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .overrideInheritedCurve, animations: {
+        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .overrideInheritedCurve, animations: {
 
             if let frame = self.frame {
                 self.topConstraint?.constant = frame.origin.y
@@ -143,6 +143,9 @@ class TodayDetailsVC: UIViewController {
                 self.heightConstraint?.constant = frame.height
 
                 self.centerView?.layer.cornerRadius = 16
+
+                self.todayDetailsUniqueVC.tableView.contentOffset = .zero
+
                 self.view.layoutIfNeeded()
             }
 
