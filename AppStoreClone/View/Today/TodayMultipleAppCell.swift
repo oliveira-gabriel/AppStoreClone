@@ -14,14 +14,18 @@ class TodayMultpleAppCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        let titleCompanyStackView = UIStackView(arrangedSubviews: [titleLabel, companyLabel])
+        titleCompanyStackView.spacing = 4
+        titleCompanyStackView.axis = .vertical
 
-        let stackView = UIStackView(arrangedSubviews: [iconImageView, titleLabel, companyLabel])
+        let stackView = UIStackView(arrangedSubviews: [iconImageView, titleCompanyStackView, button])
+
         stackView.spacing = 16
         stackView.alignment = .center
 
 
         addSubview(stackView)
-        stackView.fillSuperview()
+        stackView.fillSuperview(padding: .init(top: 14, left: 0, bottom: 14, right: 0))
     }
 
     required init?(coder: NSCoder) {
