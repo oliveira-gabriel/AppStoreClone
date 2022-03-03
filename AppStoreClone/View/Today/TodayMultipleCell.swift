@@ -31,6 +31,8 @@ class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewD
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 0)
+        tableView.showsVerticalScrollIndicator = false
 
         tableView.register(TodayMultpleAppCell.self, forCellReuseIdentifier: cellId)
 
@@ -73,6 +75,7 @@ extension TodayMultipleCell {
 
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TodayMultpleAppCell
+        cell.app = self.todayApp?.apps?[indexPath.item]
         return cell
     }
 }
