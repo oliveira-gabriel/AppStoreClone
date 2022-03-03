@@ -21,7 +21,7 @@ class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(TodayMultpleAppCell.self, forCellReuseIdentifier: cellId)
 
         let stackView = UIStackView(arrangedSubviews: [catogoryLabel, titleLabel])
         stackView.axis = .vertical
@@ -61,7 +61,7 @@ extension TodayMultipleCell {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TodayMultpleAppCell
         return cell
     }
 }
