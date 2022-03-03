@@ -6,6 +6,7 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
 
     let cellId = "cellId"
+    let multipleId = "multipleId"
     var todayApps: [TodayApp] = []
 
     init(){
@@ -25,6 +26,7 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         navigationController?.navigationBar.isHidden = true
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: multipleId)
 
         self.searchTodayHighlights()
     }
@@ -55,8 +57,16 @@ extension TodayVC {
     // informa qual o layout da celula
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
-        cell.todayApp = todayApps[indexPath.item]
-        return cell
+
+        if indexPath.item < 2 {
+            cell.todayApp = todayApps[indexPath.item]
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleId, for: indexPath)
+            cell.backgroundColor = .red
+            return cell
+        }
+
     }
 
     // seta o tamanho da celula

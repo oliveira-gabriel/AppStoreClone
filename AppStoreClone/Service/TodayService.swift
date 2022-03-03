@@ -29,19 +29,19 @@ class TodayService {
            ]
 
            AppService.shared.searchApps { (apps, err) in
-             if let apps = apps {
-               todayApps.append(
-                TodayApp(
-                   id: 3,
-                   categoria: "A LISTA DO DIA",
-                   titulo: "Pedale melhor com \nApple Watch",
-                   imagemUrl: nil,
-                   descricao: nil,
-                   backgroundColor: nil,
-                   apps: apps
-                 )
-               )
-             }
+//             if let apps = apps {
+//               todayApps.append(
+//                TodayApp(
+//                   id: 3,
+//                   categoria: "A LISTA DO DIA",
+//                   titulo: "Pedale melhor com \nApple Watch",
+//                   imagemUrl: nil,
+//                   descricao: nil,
+//                   backgroundColor: nil,
+//                   apps: apps
+//                 )
+//               )
+//             }
 
              completion(todayApps, nil)
            }
