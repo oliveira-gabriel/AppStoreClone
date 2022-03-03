@@ -9,7 +9,7 @@ class TodayDetailsUniqueVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .white
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(TodayDetailsUniqueCell.self, forCellReuseIdentifier: cellId)
         self.addHeader()
     }
 
