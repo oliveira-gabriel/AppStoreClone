@@ -26,7 +26,7 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         navigationController?.navigationBar.isHidden = true
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: multipleId)
+        collectionView.register(TodayMultipleCell.self, forCellWithReuseIdentifier: multipleId)
 
         self.searchTodayHighlights()
     }
@@ -62,7 +62,7 @@ extension TodayVC {
             cell.todayApp = todayApps[indexPath.item]
             return cell
         }else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleId, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleId, for: indexPath) as! TodayMultipleCell
             cell.backgroundColor = .red
             return cell
         }
