@@ -7,7 +7,19 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let cellId = "cellId"
     let multipleId = "multipleId"
+    let headerId = "headerId"
+
     var todayApps: [TodayApp] = []
+
+    let activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: .large)
+
+        ai.color = UIColor.systemGray
+        ai.startAnimating()
+        ai.hidesWhenStopped = true
+
+        return ai
+    }()
 
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -27,6 +39,10 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(TodayMultipleCell.self, forCellWithReuseIdentifier: multipleId)
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+
+        view.addSubview(activityIndicator)
+        activityIndicator.centerSuperview()
 
         self.searchTodayHighlights()
     }
@@ -40,6 +56,7 @@ extension TodayVC {
                 if let apps = apps {
                     self.todayApps = apps
                     self.collectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
                 }
 
             }
@@ -48,6 +65,16 @@ extension TodayVC {
 }
 
 extension TodayVC {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.bounds.width, height: 90)
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
+        header.backgroundColor = .red
+        return header
+    }
 
     // informa o numero de celulas que teremos
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -78,6 +105,12 @@ extension TodayVC {
     // seta o espaço entre as sessoes
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 24
+    }
+
+
+    // insere padding no container do TodayCell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 16, left: 0, bottom: 32, right: 0)
     }
 }
 
