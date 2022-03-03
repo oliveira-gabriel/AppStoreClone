@@ -13,6 +13,7 @@
 		4E312E7827D0503600EE2CBF /* TodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E312E7727D0503600EE2CBF /* TodayApp.swift */; };
 		4E312E7A27D05A1A00EE2CBF /* TodayMultipleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E312E7927D05A1A00EE2CBF /* TodayMultipleCell.swift */; };
 		4E312E7C27D05E3B00EE2CBF /* TodayMultipleAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E312E7B27D05E3B00EE2CBF /* TodayMultipleAppCell.swift */; };
+		4E312E7E27D063E900EE2CBF /* TodayDetailsMultipleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E312E7D27D063E900EE2CBF /* TodayDetailsMultipleViewController.swift */; };
 		4EC5A57427CD496800C81EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A57327CD496800C81EA9 /* AppDelegate.swift */; };
 		4EC5A57627CD496800C81EA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A57527CD496800C81EA9 /* SceneDelegate.swift */; };
 		4EC5A57827CD496800C81EA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A57727CD496800C81EA9 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		4E312E7727D0503600EE2CBF /* TodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayApp.swift; sourceTree = "<group>"; };
 		4E312E7927D05A1A00EE2CBF /* TodayMultipleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMultipleCell.swift; sourceTree = "<group>"; };
 		4E312E7B27D05E3B00EE2CBF /* TodayMultipleAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMultipleAppCell.swift; sourceTree = "<group>"; };
+		4E312E7D27D063E900EE2CBF /* TodayDetailsMultipleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailsMultipleViewController.swift; sourceTree = "<group>"; };
 		4EC5A57027CD496800C81EA9 /* AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC5A57327CD496800C81EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EC5A57527CD496800C81EA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				4EDD0AE127CEB643007F3919 /* TodayViewController.swift */,
 				4EDD0AE627CEE830007F3919 /* TodayDetailsViewController.swift */,
 				4E098E8527CEFC72005FE44D /* TodayDetailsUniqueViewController.swift */,
+				4E312E7D27D063E900EE2CBF /* TodayDetailsMultipleViewController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				4E312E7C27D05E3B00EE2CBF /* TodayMultipleAppCell.swift in Sources */,
 				4EC5A5AB27CD4A5400C81EA9 /* UIButton.swift in Sources */,
 				4EDD0ACB27CD5EA3007F3919 /* AppService.swift in Sources */,
+				4E312E7E27D063E900EE2CBF /* TodayDetailsMultipleViewController.swift in Sources */,
 				4EDD0AD627CE542A007F3919 /* AppDetailsViewController.swift in Sources */,
 				4E312E7627D04FEE00EE2CBF /* TodayService.swift in Sources */,
 			);

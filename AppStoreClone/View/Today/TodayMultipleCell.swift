@@ -34,7 +34,9 @@ class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewD
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 0)
         tableView.showsVerticalScrollIndicator = false
 
-        tableView.register(TodayMultpleAppCell.self, forCellReuseIdentifier: cellId)
+        tableView.isUserInteractionEnabled = false
+
+        tableView.register(TodayMultipleAppCell.self, forCellReuseIdentifier: cellId)
 
         let stackView = UIStackView(arrangedSubviews: [catogoryLabel, titleLabel])
         stackView.axis = .vertical
@@ -74,7 +76,7 @@ extension TodayMultipleCell {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TodayMultpleAppCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TodayMultipleAppCell
         cell.app = self.todayApp?.apps?[indexPath.item]
         return cell
     }

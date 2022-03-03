@@ -10,7 +10,10 @@ class TodayDetailsVC: UIViewController {
             if let todayApp = todayApp {
                 if todayApp.apps == nil {
                     self.addUnique()
+                } else {
+                    self.addMultiple()
                 }
+
             }
         }
     }
@@ -24,6 +27,7 @@ class TodayDetailsVC: UIViewController {
     var heightConstraint: NSLayoutConstraint?
 
     let todayDetailsUniqueVC = TodayDetailsUniqueVC()
+    let todayDetailsMultipleVC = TodayDetailsMultipleVC()
 
     var handlerClose: (() ->())?
 
@@ -57,6 +61,12 @@ class TodayDetailsVC: UIViewController {
     func addUnique() {
         todayDetailsUniqueVC.todayApp = self.todayApp
         self.centerView = todayDetailsUniqueVC.view
+        self.animated()
+    }
+
+    func addMultiple() {
+        todayDetailsMultipleVC.todayApp = self.todayApp
+        self.centerView = todayDetailsMultipleVC.view
         self.animated()
     }
 
