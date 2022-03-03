@@ -5,6 +5,7 @@ import UIKit
 class TodayDetailsUniqueVC: UITableViewController {
 
     let cellId = "cellId"
+    var todayApp: TodayApp? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class TodayDetailsUniqueVC: UITableViewController {
         let headerView = UIView(frame: .init(x: 0, y: 0, width: view.bounds.width, height: 380))
         headerView.backgroundColor = .red
         let todayCell = TodayCell()
+
+        todayCell.todayApp = self.todayApp
+        
         todayCell.layer.cornerRadius = 0
 
         headerView.addSubview(todayCell)

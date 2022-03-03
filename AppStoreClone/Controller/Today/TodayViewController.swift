@@ -91,7 +91,7 @@ extension TodayVC {
 
                 self.present(modalView, animated: false){
                     modalView.frame = frame
-                    modalView.addUnique()
+                    modalView.todayApp = self.todayApps[indexPath.item]
                 }
             }
         }

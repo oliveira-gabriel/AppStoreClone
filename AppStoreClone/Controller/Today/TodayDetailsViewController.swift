@@ -3,6 +3,17 @@ import UIKit
 
 class TodayDetailsVC: UIViewController {
 
+
+    var todayApp: TodayApp? {
+
+        didSet{
+            if let todayApp = todayApp {
+                if todayApp.apps == nil {
+                    self.addUnique()
+                }
+            }
+        }
+    }
     let closeButton: UIButton = .closeButton()
     var centerView: UIView?
     var frame: CGRect?
@@ -44,7 +55,7 @@ class TodayDetailsVC: UIViewController {
     }
     
     func addUnique() {
-
+        todayDetailsUniqueVC.todayApp = self.todayApp
         self.centerView = todayDetailsUniqueVC.view
         self.animated()
     }
