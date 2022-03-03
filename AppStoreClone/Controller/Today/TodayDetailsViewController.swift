@@ -34,8 +34,20 @@ class TodayDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         view.backgroundColor = .clear
 
+    }
+
+
+    // quando for renderizar
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+
+    // quando for fechar a pagina
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
 
     func addCloseButton() {
@@ -66,6 +78,14 @@ class TodayDetailsVC: UIViewController {
 
     func addMultiple() {
         todayDetailsMultipleVC.todayApp = self.todayApp
+        todayDetailsMultipleVC.handlerPress = { app in
+
+            let detailsVC = AppDetailsVC()
+            detailsVC.title = app.nome
+            detailsVC.appId = app.id
+            detailsVC.app = app
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }
         self.centerView = todayDetailsMultipleVC.view
         self.animated()
     }

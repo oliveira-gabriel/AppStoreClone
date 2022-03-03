@@ -98,7 +98,13 @@ extension TodayVC {
                     self.tabBarController?.tabBar.isHidden = false
                 }
 
-                self.present(modalView, animated: false){
+                // configuration of navigator
+                let modalNav = UINavigationController(rootViewController: modalView)
+                modalNav.modalPresentationStyle = .overCurrentContext
+                modalNav.view.backgroundColor = .clear
+
+
+                self.present(modalNav, animated: false){
                     modalView.frame = frame
                     modalView.todayApp = self.todayApps[indexPath.item]
                 }
