@@ -4,6 +4,23 @@ import UIKit
 class TodayCell: UICollectionViewCell {
 
 
+    var todayApp: TodayApp? {
+        didSet{
+            if let todayApp = todayApp {
+                catogoryLabel.text = todayApp.categoria
+                titleLabel.text = todayApp.titulo
+                descriptionLabel.text = todayApp.descricao
+                if let image = todayApp.imagemUrl {
+                    imageView.image = UIImage(named: image)
+                }
+
+                if let background = todayApp.backgroundColor {
+                    self.backgroundColor = UIColor(hexString: background)
+                }
+            }
+        }
+    }
+
     let catogoryLabel: UILabel = .textLabel(text: "VIAGEM", fontSize: 18)
     let titleLabel: UILabel = .textBoldLabel(text: "Explore o mundo \nsem medo", fontSize: 28, numberOfLine: 2)
 
