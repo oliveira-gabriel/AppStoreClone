@@ -5,10 +5,11 @@ import UIKit
 class TodayDetailsUniqueVC: UITableViewController {
 
     let cellId = "cellId"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .white
-
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         self.addHeader()
     }
 
@@ -27,5 +28,11 @@ class TodayDetailsUniqueVC: UITableViewController {
 }
 
 extension TodayDetailsUniqueVC {
-
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+      }
+      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        return cell
+      }
 }

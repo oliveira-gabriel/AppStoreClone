@@ -14,6 +14,8 @@ class TodayDetailsVC: UIViewController {
 
     let todayDetailsUniqueVC = TodayDetailsUniqueVC()
 
+    var handlerClose: (() ->())?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +26,7 @@ class TodayDetailsVC: UIViewController {
     func addCloseButton() {
         view.addSubview(closeButton)
         closeButton.alpha = 0
-        closeButton.addTarget(self, action: #selector(handleClose), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(handleCloseSelector), for: .touchUpInside)
 
         closeButton.fill(
             top: self.view.safeAreaLayoutGuide.topAnchor,
@@ -89,8 +91,28 @@ class TodayDetailsVC: UIViewController {
 
     }
 
+    func closeAnimation() {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .overrideInheritedCurve, animations: {
 
-    @objc func handleClose() {
+            if let frame = self.frame {
+                self.topConstraint?.constant = frame.origin.y
+                self.leadingConstraint?.constant = frame.origin.x
+
+                self.widthConstraint?.constant = frame.width
+                self.heightConstraint?.constant = frame.height
+
+                self.centerView?.layer.cornerRadius = 16
+                self.view.layoutIfNeeded()
+            }
+
+        }) { _ in
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
+    @objc func handleCloseSelector() {
+        self.closeButton.isHidden = true
+        self.handlerClose?()
+        self.closeAnimation()
 
     }
 }
