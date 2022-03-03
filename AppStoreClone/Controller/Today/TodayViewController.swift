@@ -63,7 +63,6 @@ extension TodayVC {
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleId, for: indexPath) as! TodayMultipleCell
-            cell.backgroundColor = .red
             return cell
         }
 
