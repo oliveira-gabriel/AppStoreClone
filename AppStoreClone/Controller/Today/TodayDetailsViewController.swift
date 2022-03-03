@@ -133,6 +133,17 @@ class TodayDetailsVC: UIViewController {
     }
 
     func closeAnimation() {
+
+        self.todayDetailsMultipleVC.tableView.setContentOffset(
+            CGPoint(
+                x: 0,
+                y: -self.todayDetailsMultipleVC.tableView.safeAreaInsets.top
+            ),
+            animated: false
+        )
+
+        self.todayDetailsMultipleVC.tableView.layoutIfNeeded()
+
         UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .overrideInheritedCurve, animations: {
 
             if let frame = self.frame {
